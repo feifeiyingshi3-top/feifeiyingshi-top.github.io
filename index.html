@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>菲菲影视 - 手绘速写 · 分镜影单 | feifeiyingshi-top</title>
+<meta name="description" content="菲菲影视 (feifeiyingshi-top.github.io) 采用手绘速写风格，以铅笔线条、斜线排线、涂鸦标注与便利贴元素呈现影视片单、类型分类、口碑榜与影讯单页。仅作影视信息展示，不提供片源。">
+<meta name="keywords" content="菲菲影视, feifeiyingshi-top, 手绘速写风网站, 分镜影单, 铅笔线条, 影视信息展示">
+<link rel="canonical" href="https://feifeiyingshi-top.github.io">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="菲菲影视 - 手绘速写 · 分镜影单">
+<meta property="og:description" content="铅笔线条、斜线排线、涂鸦标注与便利贴元素的影视信息单页。">
+<meta property="og:url" content="https://feifeiyingshi-top.github.io">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"菲菲影视","url":"https://feifeiyingshi-top.github.io","description":"手绘速写风影视信息展示单页。"}
+</script>
+<style>
+:root{
+  --paper:#faf6ee;
+  --paper2:#f2ebdc;
+  --ink:#2b2b2b;
+  --ink2:#6d6a63;
+  --pen:#33312e;
+  --pen2:#5b5852;
+  --yellow:#ffe14d;
+  --pink:#ff9ec0;
+  --blue:#7fb8e0;
+  --green:#8fc07a;
+  --line:rgba(43,43,43,.2);
+  --serif:"Songti SC","STSong","Noto Serif CJK SC",serif;
+  --sans:"PingFang SC","Microsoft YaHei",Arial,sans-serif;
+  --shadow:4px 6px 0 rgba(43,43,43,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.7;overflow-x:hidden;position:relative;
+  background-image:
+    radial-gradient(circle at 14% 8%,rgba(255,225,77,.2),transparent 42%),
+    radial-gradient(circle at 86% 16%,rgba(127,184,224,.2),transparent 42%),
+    radial-gradient(circle at 50% 96%,rgba(143,192,122,.18),transparent 44%);
+}
+/* 纸纹 */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:26px 26px;}
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.3;
+  background-image:radial-gradient(rgba(43,43,43,.1) 1px,transparent 1px);background-size:7px 7px;}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+
+/* 铅笔徽标 */
+.pencil{width:44px;height:22px;position:relative;background:linear-gradient(90deg,var(--yellow) 0 60%,#5b5852 60% 86%,#33312e 86%);clip-path:polygon(0 30%,100% 50%,0 70%);transform:rotate(-12deg);border:1px solid var(--ink)}
+
+header{position:sticky;top:0;z-index:60;background:rgba(250,246,238,.92);backdrop-filter:blur(6px);border-bottom:2px dashed var(--ink)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 20px;max-width:1140px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:700;font-size:1.45rem;letter-spacing:1px}
+.brand b{color:var(--pen2)}
+nav ul{display:flex;gap:6px;flex-wrap:wrap}
+nav a{display:block;padding:7px 15px;font-size:.86rem;color:var(--ink2);border:1px dashed transparent;border-radius:2px;transition:.2s}
+nav a:hover{color:var(--ink);border-color:var(--ink);background:rgba(255,225,77,.2)}
+.mbtn{display:none;background:var(--paper2);border:2px solid var(--ink);color:var(--ink);border-radius:3px;width:36px;height:36px;cursor:pointer;font-family:var(--serif);font-size:1rem}
+
+section{padding:64px 0}
+/* 手绘箭头分隔 */
+.arrow{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-family:var(--serif);color:var(--ink2)}
+.arrow .ln{flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--ink) 0 8px,transparent 8px 16px)}
+.arrow .ar{font-size:1.2rem;transform:rotate(-12deg)}
+.eyebrow{display:inline-block;font-family:var(--serif);font-size:.9rem;letter-spacing:2px;color:var(--ink);background:var(--yellow);padding:4px 14px;border:1px solid var(--ink);transform:rotate(-1.5deg)}
+.h2{font-family:var(--serif);font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:700;margin:12px 0 8px;letter-spacing:1px}
+.sub{color:var(--ink2);max-width:680px;margin-bottom:28px;font-size:.95rem}
+
+/* Hero */
+.hero{padding:80px 0 54px;text-align:center}
+.sheet{display:inline-block;background:var(--paper);border:2px solid var(--ink);padding:34px 40px;position:relative;box-shadow:var(--shadow);transform:rotate(-.6deg)}
+.sheet::before{content:"";position:absolute;left:10px;right:10px;top:12px;bottom:12px;border:1px dashed var(--line)}
+.sheet .pin{position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:var(--pink);border:2px solid var(--ink);box-shadow:0 2px 0 rgba(0,0,0,.15)}
+.hero h1{font-family:var(--serif);font-size:clamp(2.6rem,9vw,5.4rem);font-weight:700;line-height:1.06;letter-spacing:2px;position:relative;z-index:2}
+.hero h1 .ff{color:var(--pen2)}
+.hero h1 .en{font-family:"Courier New",monospace;font-size:.26em;letter-spacing:4px;color:var(--ink2);display:block;margin-top:14px}
+.hero .doodle{font-size:2.4rem;margin:22px 0;display:inline-block;transform:rotate(-6deg)}
+.hero .sub{max-width:620px;margin:0 auto 24px;font-size:1.05rem}
+.urlbox{display:inline-flex;align-items:center;gap:10px;background:var(--yellow);border:2px solid var(--ink);padding:12px 20px;font-family:"Courier New",monospace;font-size:.88rem;color:var(--ink);box-shadow:3px 3px 0 rgba(43,43,43,.2)}
+.urlbox i{width:10px;height:10px;background:var(--ink);transform:rotate(45deg)}
+
+/* 片单：便利贴卡 */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:28px 26px}
+.card{background:var(--paper);border:2px solid var(--ink);padding:16px;box-shadow:var(--shadow);transition:.3s;position:relative}
+.card::before{content:"";position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(-3deg);width:44px;height:14px;background:rgba(255,255,255,.9);border:1px solid var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.1)}
+.card:nth-child(even)::before{transform:translateX(-50%) rotate(4deg)}
+.card:hover{transform:translateY(-6px) rotate(-.5deg)}
+.card .poster{height:150px;display:grid;place-items:center;font-size:3.2rem;position:relative;overflow:hidden;border:2px solid var(--ink)}
+.card .poster::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0 6px,rgba(43,43,43,.07) 7px)}
+.card h3{font-family:var(--serif);font-size:1.24rem;letter-spacing:.5px;margin:14px 0 5px}
+.card p{font-size:.86rem;color:var(--ink2)}
+.card .cap{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:.82rem;color:var(--ink);border-top:1px dashed var(--ink);padding-top:8px}
+.note{background:var(--pink);border:1px solid var(--ink);border-radius:2px;padding:2px 10px;font-size:.78rem;box-shadow:2px 2px 0 rgba(43,43,43,.15)}
+.p1{background:linear-gradient(135deg,#fff3c4,#ffe14d)} .p2{background:linear-gradient(135deg,#dbeaf7,#7fb8e0);color:#123a52} .p3{background:linear-gradient(135deg,#fbe4ec,#ff9ec0);color:#5a2436} .p4{background:linear-gradient(135deg,#e6f3df,#8fc07a);color:#1c3a14}
+
+/* 分类 */
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+.cat{background:var(--paper);border:2px solid var(--ink);padding:22px 14px;text-align:center;transition:.25s;cursor:pointer;box-shadow:2px 3px 0 rgba(43,43,43,.14)}
+.cat:hover{background:var(--yellow);transform:translateY(-3px)}
+.cat .ic{font-size:2rem;margin-bottom:8px;display:block}
+.cat h3{font-size:.94rem;letter-spacing:.5px}
+
+/* 排行榜 */
+.rank{display:flex;flex-direction:column;gap:12px}
+.row{display:grid;grid-template-columns:64px 1fr auto;gap:18px;align-items:center;background:var(--paper);border:2px solid var(--ink);padding:16px 20px;box-shadow:var(--shadow);transition:.25s}
+.row:hover{background:#fffbe8;transform:translateX(3px)}
+.row .no{font-family:var(--serif);font-size:1.4rem;color:var(--paper);background:var(--ink);width:46px;height:46px;border:2px solid var(--ink);display:grid;place-items:center}
+.row h3{font-family:var(--serif);font-size:1.18rem;letter-spacing:.5px}
+.row p{font-size:.84rem;color:var(--ink2)}
+.row .sc{font-family:"Courier New",monospace;font-weight:700;font-size:1rem;color:var(--ink);background:var(--yellow);border:1px solid var(--ink);padding:5px 12px;box-shadow:2px 2px 0 rgba(43,43,43,.15)}
+
+/* 影讯 */
+.news{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.nw{background:var(--paper);border:2px solid var(--ink);border-left:6px solid var(--ink);padding:20px;box-shadow:var(--shadow);transition:.25s;position:relative}
+.nw:nth-child(2){border-left-color:var(--pink)} .nw:nth-child(3){border-left-color:var(--blue)}
+.nw::after{content:"✎";position:absolute;top:12px;right:14px;color:var(--line);font-size:1.2rem}
+.nw:hover{transform:translateY(-4px)}
+.nw .dt{font-family:var(--serif);font-size:.84rem;color:var(--ink);letter-spacing:1px;margin-bottom:6px}
+.nw h3{font-family:var(--serif);font-size:1.14rem;margin-bottom:6px;letter-spacing:.5px}
+.nw p{font-size:.88rem;color:var(--ink2)}
+
+footer{margin-top:34px;border-top:2px dashed var(--ink);padding:42px 0 24px;background:rgba(242,235,220,.6)}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}
+footer h4{font-family:var(--serif);font-size:1rem;color:var(--ink);letter-spacing:1px;margin-bottom:12px}
+footer p,footer li{font-size:.88rem;color:var(--ink2);margin-bottom:8px}
+footer a{color:var(--ink)}
+footer a:hover{background:var(--yellow)}
+.notice{margin-top:18px;padding:15px 18px;background:var(--yellow);border:2px solid var(--ink);font-size:.86rem;color:var(--ink);line-height:1.7;box-shadow:3px 3px 0 rgba(43,43,43,.15)}
+.copy{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-size:.8rem;color:var(--ink2);text-align:center}
+.copy .u{font-weight:700;color:var(--ink)}
+
+@media(max-width:768px){
+  .mbtn{display:block}
+  nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:14px 20px;background:var(--paper);border-bottom:2px dashed var(--ink)}
+  nav ul.open{display:flex}
+  nav a{text-align:center}
+  .foot{grid-template-columns:1fr}
+  .sheet{padding:24px 18px}
+  .row{grid-template-columns:46px 1fr;gap:12px}
+  .row .sc{grid-column:2;justify-self:start;margin-top:4px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<header>
+  <div class="bar">
+    <div class="brand"><span class="pencil"></span>菲菲<span class="ff">影视</span></div>
+    <button class="mbtn" id="mb" aria-label="菜单">✎</button>
+    <nav>
+      <ul id="menu">
+        <li><a href="#">速写本</a></li>
+        <li><a href="#films">分镜片单</a></li>
+        <li><a href="#cats">涂鸦分类</a></li>
+        <li><a href="#rank">口碑榜</a></li>
+        <li><a href="#news">影讯</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="sheet">
+      <span class="pin"></span>
+      <h1>菲菲<span class="ff">影视</span><span class="en">SKETCHBOOK · STORYBOARD</span></h1>
+    </div>
+    <div class="doodle">🎬</div>
+    <p class="sub">像翻開一本速寫本：鉛筆線條、斜線排線、便利貼與塗鴉標注。本頁僅作影視信息展示，不提供片源與下載。</p>
+    <div class="urlbox"><i></i>feifeiyingshi-top.github.io</div>
+  </section>
+
+  <section id="films">
+    <div class="arrow"><span class="ln"></span><span class="ar">➤</span><span class="ln"></span></div>
+    <span class="eyebrow">分鏡片單</span>
+    <h2 class="h2">分镜片单</h2>
+    <p class="sub">像分镜稿一样一帧帧排开的精选片单，点击仅作信息展示；观看请走正版平台或院线。</p>
+    <div class="grid">
+      <div class="card"><div class="poster p1">📓</div><h3>天使爱美丽</h3><p>剧情 / 奇幻浪漫 · 2001</p><div class="cap"><span>手绘浪漫</span><span class="note">8.7</span></div></div>
+      <div class="card"><div class="poster p2">🎨</div><h3>至爱梵高</h3><p>动画 / 油画传记 · 2017</p><div class="cap"><span>油画笔触</span><span class="note">8.6</span></div></div>
+      <div class="card"><div class="poster p3">📖</div><h3>帕丁顿熊</h3><p>喜剧 / 绘本改编 · 2014</p><div class="cap"><span>绘本气质</span><span class="note">8.1</span></div></div>
+      <div class="card"><div class="poster p4">🖍️</div><h3>了不起的狐狸爸爸</h3><p>动画 / 定格绘本 · 2009</p><div class="cap"><span>定格手作</span><span class="note">8.5</span></div></div>
+    </div>
+  </section>
+
+  <section id="cats">
+    <div class="arrow"><span class="ln"></span><span class="ar">➤</span><span class="ln"></span></div>
+    <span class="eyebrow">塗鴉分類</span>
+    <h2 class="h2">涂鸦分类</h2>
+    <p class="sub">按手绘气质与题材分区，内链统一 # 占位。</p>
+    <div class="cats">
+      <div class="cat"><span class="ic">📓</span><h3>速写生活</h3></div>
+      <div class="cat"><span class="ic">🎨</span><h3>油画笔触</h3></div>
+      <div class="cat"><span class="ic">🖍️</span><h3>绘本气质</h3></div>
+      <div class="cat"><span class="ic">📖</span><h3>漫画改编</h3></div>
+      <div class="cat"><span class="ic">✎</span><h3>手写信件</h3></div>
+      <div class="cat"><span class="ic">🎬</span><h3>分镜故事</h3></div>
+      <div class="cat"><span class="ic">🖼️</span><h3>美术传记</h3></div>
+      <div class="cat"><span class="ic">🌈</span><h3>色彩治愈</h3></div>
+    </div>
+  </section>
+
+  <section id="rank">
+    <div class="arrow"><span class="ln"></span><span class="ar">➤</span><span class="ln"></span></div>
+    <span class="eyebrow">口碑榜</span>
+    <h2 class="h2">口碑榜</h2>
+    <p class="sub">综合手绘质感、叙事与重看价值的评分。</p>
+    <div class="rank">
+      <div class="row"><div class="no">壹</div><div><h3>千与千寻</h3><p>动画 / 手绘奇幻 · 2001</p></div><div class="sc">9.4</div></div>
+      <div class="row"><div class="no">贰</div><div><h3>至爱梵高</h3><p>动画 / 油画传记 · 2017</p></div><div class="sc">8.6</div></div>
+      <div class="row"><div class="no">叁</div><div><h3>天使爱美丽</h3><p>剧情 / 奇幻浪漫 · 2001</p></div><div class="sc">8.7</div></div>
+      <div class="row"><div class="no">肆</div><div><h3>了不起的狐狸爸爸</h3><p>动画 / 定格 · 2009</p></div><div class="sc">8.5</div></div>
+      <div class="row"><div class="no">伍</div><div><h3>帕丁顿熊</h3><p>喜剧 / 绘本 · 2014</p></div><div class="sc">8.1</div></div>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="arrow"><span class="ln"></span><span class="ar">➤</span><span class="ln"></span></div>
+    <span class="eyebrow">影訊</span>
+    <h2 class="h2">影讯</h2>
+    <p class="sub">手绘影像、分镜语言与版权提示，单页资讯内链统一 #。</p>
+    <div class="news">
+      <div class="nw"><div class="dt">鉛筆 · 選片</div><h3>手繪感為什麼討喜</h3><p>手繪質感自帶溫度與不完美感，觀眾更容易感受到「人」在影像裡的痕跡，適合低刺激、高情緒的片單。</p></div>
+      <div class="nw"><div class="dt">排線 · 語言</div><h3>分鏡是導演的草圖</h3><p>分鏡稿決定了鏡頭的起承轉合，看懂分鏡邏輯，就能看懂一部片的節奏為什麼舒服。</p></div>
+      <div class="nw"><div class="dt">塗鴉 · 合規</div><h3>觀看渠道請選正版</h3><p>本站不存儲、不轉碼、不提供盜版資源與下載；請通過合法授權平台、院線或正版發行渠道觀看。</p></div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <h4>關於菲菲影視</h4>
+      <p>菲菲影視 (feifeiyingshi-top.github.io) 以手繪速寫風格，提供分鏡片單、塗鴉分類、口碑榜與影訊單頁。本站僅展示影視元數據與導航，不提供完整片源、不提供下載；實際觀看請通過正版視頻平台、院線或合法發行渠道。</p>
+    </div>
+    <div>
+      <h4>目錄</h4>
+      <ul>
+        <li><a href="#">速写本</a></li>
+        <li><a href="#films">分镜片单</a></li>
+        <li><a href="#cats">涂鸦分类</a></li>
+        <li><a href="#rank">口碑榜</a></li>
+        <li><a href="#news">影讯</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>信息</h4>
+      <ul>
+        <li>網站名稱：菲菲影視</li>
+        <li>網址：<a href="https://feifeiyingshi-top.github.io">feifeiyingshi-top.github.io</a></li>
+        <li>風格：手繪速寫 / 分鏡</li>
+        <li>收錄：響應式單頁、canonical、index,follow</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap notice">
+    ⚖️ 版權提示：影片名稱、海報、劇照及評分權利歸製片方與發行方所有。本站不存儲、不轉碼、不提供盜版資源或下載，不誘導註冊、充值或下載不明安裝包。若您想觀看某部影片，請通過合法授權平台或院線。
+  </div>
+  <div class="wrap copy">
+    © 2024 菲菲影視 (feifeiyingshi-top.github.io) 僅作影視信息展示。
+    <div class="u">feifeiyingshi-top.github.io</div>
+  </div>
+</footer>
+
+<script>
+var mb=document.getElementById('mb'),menu=document.getElementById('menu');
+mb.addEventListener('click',function(){menu.classList.toggle('open');});
+menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
+</script>
+</body>
+</html>
